@@ -28,11 +28,17 @@ public:
 
 private:
 	/* Camara boom positioning the camara behind the character*/
-	UPROPERTY(VisibleAnywhere, BluePrintReadOnly, Category= Camara, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(VisibleAnywhere, BluePrintReadOnly, Category = Camara, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CamaraBoom;
+
+	UPROPERTY(VisibleAnywhere, BluePrintReadOnly, Category = Camara, meta = (AllowPrivateAccess = "true"))
+	class UCameraComponent* FollowCamera;
 
 public:
 	/* Retruns CamaraBoom subobject */
 	FORCEINLINE USpringArmComponent* GetCamaraBoom() const { return CamaraBoom; }
+
+	/* Returns FollowCamara subobject */
+	FORCEINLINE UCameraComponent* GetFollowCamara() const { return FollowCamera; }
 
 };
